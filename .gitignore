@@ -1,0 +1,46 @@
+# ========== UNITY SPECIFIC ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+MemoryCaptures/
+
+# Ignore crash reports
+sysinfo.txt
+
+# Ignore auto-generated VS/JetBrains files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Ignore VSCode folder
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Unity Collaborate and plastic SCM
+.plastic/
+.collab/
+
+# Builds
+*.apk
+*.aab
+*.exe
+*.app
+*.ipa
