@@ -2,9 +2,11 @@
 
 ## 🧾 Informasi Umum
 - **Nama:** Hidayat 
-- **NIM:** 116  
+- **NIM:** 116
+- **Kelas:** B
 - **Mata Kuliah:** Grafika Komputer  
-- **Tahun Akademik:** 2025  
+- **Tahun Akademik:** 2024/2025  
+- **Semester:** 4 ( Genap )  
 - **Judul Proyek:** Game Snake  
 - **Platform Pengembangan:** Unity  
 - **Versi Unity:** 2022.3.62f1 (LTS)
