@@ -1,8 +1,8 @@
 # 🐍 Snake Game – Tugas Proyek Grafika Komputer 2025
 
 ## 🧾 Informasi Umum
-- **Nama:** Hidayat Lossen  
-- **NIM:** 2300018116  
+- **Nama:** Hidayat 
+- **NIM:** 116  
 - **Mata Kuliah:** Grafika Komputer  
 - **Tahun Akademik:** 2025  
 - **Judul Proyek:** Game Snake  
