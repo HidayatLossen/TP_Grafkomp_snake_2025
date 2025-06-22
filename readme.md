@@ -1,8 +1,7 @@
 # 🐍 Snake Game – Tugas Proyek Grafika Komputer 2025
 
 ## 🧾 Informasi Umum
-- **Nama:** Hidayat 
-- **NIM:** 116
+- **Nama:** Hidayat - 116
 - **Kelas:** B
 - **Mata Kuliah:** Grafika Komputer  
 - **Tahun Akademik:** 2024/2025
