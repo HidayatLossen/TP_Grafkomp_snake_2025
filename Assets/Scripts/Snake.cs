@@ -13,6 +13,8 @@ public class Snake : MonoBehaviour
 
     public int initialSize = 4;
 
+    private Queue<Transform> _segmentPool = new Queue<Transform>(); // Tambahan Versi 2
+
     public void Start()
     {
         // _segments = new List<Transform>();
@@ -77,7 +79,24 @@ public class Snake : MonoBehaviour
 
     public void Grow()
     {
-        Transform segment = Instantiate(segmentPrefab);
+        // Transform segment = Instantiate(segmentPrefab);
+        // segment.position = _segments[_segments.Count - 1].position;
+        // _segments.Add(segment);
+
+
+        // Tambahan Versi 2
+        Transform segment;
+
+        if (_segmentPool.Count > 0)
+        {
+            segment = _segmentPool.Dequeue();
+            segment.gameObject.SetActive(true);
+        }
+        else
+        {
+            segment = Instantiate(segmentPrefab);
+        }
+
         segment.position = _segments[_segments.Count - 1].position;
         _segments.Add(segment);
     }
@@ -86,7 +105,11 @@ public class Snake : MonoBehaviour
     {
         for (int i = 1; i < _segments.Count; i++)
         {
-            Destroy(_segments[i].gameObject);
+            // Destroy(_segments[i].gameObject);
+
+            // Tambahan Versi 2
+            _segments[i].gameObject.SetActive(false);
+            _segmentPool.Enqueue(_segments[i]);
         }
 
         _segments.Clear();
@@ -95,7 +118,10 @@ public class Snake : MonoBehaviour
         for (int i = 1; i < initialSize; i++)
         {
             // _segments.Add(Instantiate(segmentPrefab, transform.position, Quaternion.identity));
-            _segments.Add(Instantiate(segmentPrefab));
+            // _segments.Add(Instantiate(segmentPrefab));
+
+            // Tambahan Versi 2
+            Grow();
         }
 
         transform.position = Vector3.zero;
