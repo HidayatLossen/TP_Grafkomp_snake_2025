@@ -42,22 +42,42 @@ public class Snake : MonoBehaviour
         //     _direction = Vector2.right;
         // }
 
+        // if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _direction != Vector2.down)
+        // {
+        //     _inputDirection = Vector2.up;
+        // }
+        // else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _direction != Vector2.up)
+        // {
+        //     _inputDirection = Vector2.down;
+        // }
+        // else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _direction != Vector2.right)
+        // {
+        //     _inputDirection = Vector2.left;
+        // }
+        // else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _direction != Vector2.left)
+        // {
+        //     _inputDirection = Vector2.right;
+        // }
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _direction != Vector2.down)
-        {
-            _inputDirection = Vector2.up;
-        }
-        else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _direction != Vector2.up)
-        {
-            _inputDirection = Vector2.down;
-        }
-        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _direction != Vector2.right)
-        {
-            _inputDirection = Vector2.left;
-        }
-        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _direction != Vector2.left)
-        {
-            _inputDirection = Vector2.right;
-        }
+    {
+        _inputDirection = Vector2.up;
+        transform.rotation = Quaternion.Euler(0, 0, 90);
+    }
+    else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _direction != Vector2.up)
+    {
+        _inputDirection = Vector2.down;
+        transform.rotation = Quaternion.Euler(0, 0, -90);
+    }
+    else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _direction != Vector2.right)
+    {
+        _inputDirection = Vector2.left;
+        transform.rotation = Quaternion.Euler(0, 0, 180);
+    }
+    else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _direction != Vector2.left)
+    {
+        _inputDirection = Vector2.right;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
     }
 
     private void FixedUpdate()
@@ -127,6 +147,7 @@ public class Snake : MonoBehaviour
         transform.position = Vector3.zero;
         _direction = Vector2.right; // Tambahan ============
         _inputDirection = Vector2.right; // Tambahan ============
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
