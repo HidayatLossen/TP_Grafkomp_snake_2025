@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentPrefab: {fileID: 3840875592431664941, guid: aab48129819f8e44b8a8ba1f0d31e70b, type: 3}
   initialSize: 3
+  food: {fileID: 308747512}
 --- !u!61 &192209216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -779,7 +780,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.19999999, y: 0.100000024, z: 0}
+  m_ChunkCullingBounds: {x: 0.16666669, y: 0.0714286, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -17245,7 +17246,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0.19999999, y: 0.100000024, z: 0}
+  m_ChunkCullingBounds: {x: 0.16666669, y: 0.0714286, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
