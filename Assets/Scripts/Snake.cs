@@ -15,6 +15,8 @@ public class Snake : MonoBehaviour
 
     private Queue<Transform> _segmentPool = new Queue<Transform>(); // Tambahan Versi 2
 
+    public Food food;
+
     public void Start()
     {
         // _segments = new List<Transform>();
@@ -159,6 +161,7 @@ public class Snake : MonoBehaviour
         else if (other.CompareTag("Obstacle"))
         {
             ResetState();
+            food.SendMessage("RandomizePosition");
         }
     }
 
