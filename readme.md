@@ -1,4 +1,5 @@
 # 🐍 Snake Game – Tugas Proyek Grafika Komputer 2025
+![Version](https://img.shields.io/badge/version-v1.4.0-blue)
 
 ![Gameplay Screenshot](img/Snake_game.png)
 
