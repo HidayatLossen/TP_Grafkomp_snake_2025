@@ -17,11 +17,22 @@ public class Snake : MonoBehaviour
 
     public Food food;
 
+
+
+    public ScoreManager scoreManager;
+
+    public AudioClip eatSound;
+    public AudioClip hitSound;
+
+    private AudioSource audioSource;
+
+
+
     public void Start()
     {
         // _segments = new List<Transform>();
         // _segments.Add(transform);
-
+        audioSource = GetComponent<AudioSource>();
         ResetState();
     }
 
@@ -157,11 +168,29 @@ public class Snake : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             Grow();
+            if (scoreManager != null)
+            {
+                scoreManager.AddScore(1);
+            }
+
+            if (eatSound != null)
+            {
+                audioSource.PlayOneShot(eatSound);
+            }
         }
         else if (other.CompareTag("Obstacle"))
         {
             ResetState();
             food.SendMessage("RandomizePosition");
+            if (scoreManager != null)
+            {
+                scoreManager.ResetScore();
+            }
+            
+            if (hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
         }
     }
 
