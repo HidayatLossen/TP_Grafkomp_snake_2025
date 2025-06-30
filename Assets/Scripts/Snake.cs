@@ -158,9 +158,37 @@ public class Snake : MonoBehaviour
         }
 
         transform.position = Vector3.zero;
-        _direction = Vector2.right; // Tambahan ============
-        _inputDirection = Vector2.right; // Tambahan ============
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        // _direction = Vector2.right; // Tambahan ============
+        // _inputDirection = Vector2.right; // Tambahan ============
+        // transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        // Random direction
+        float random = UnityEngine.Random.value;
+        if (random < 0.25f)
+        {
+            _direction = Vector2.right;
+            _inputDirection = Vector2.right;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (random < 0.5f)
+        {
+            _direction = Vector2.left;
+            _inputDirection = Vector2.left;
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        else if (random < 0.75f)
+        {
+            _direction = Vector2.up;
+            _inputDirection = Vector2.up;
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else
+        {
+            _direction = Vector2.down;
+            _inputDirection = Vector2.down;
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
