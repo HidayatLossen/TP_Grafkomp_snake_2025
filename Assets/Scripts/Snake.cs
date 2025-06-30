@@ -28,6 +28,14 @@ public class Snake : MonoBehaviour
 
 
 
+    private float moveTimer = 0f;
+    private float moveDelay = 0.05f; // Awal = 0.07 detik
+    private float minDelay = 0.01f;  // Batas bawah (maksimum kecepatan)
+    private float speedIncrease = 0.002f; // Setiap kali makan, delay dikurangi 0.002
+
+
+
+
     public void Start()
     {
         // _segments = new List<Transform>();
@@ -72,31 +80,42 @@ public class Snake : MonoBehaviour
         //     _inputDirection = Vector2.right;
         // }
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _direction != Vector2.down)
-    {
-        _inputDirection = Vector2.up;
-        transform.rotation = Quaternion.Euler(0, 0, 90);
-    }
-    else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _direction != Vector2.up)
-    {
-        _inputDirection = Vector2.down;
-        transform.rotation = Quaternion.Euler(0, 0, -90);
-    }
-    else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _direction != Vector2.right)
-    {
-        _inputDirection = Vector2.left;
-        transform.rotation = Quaternion.Euler(0, 0, 180);
-    }
-    else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _direction != Vector2.left)
-    {
-        _inputDirection = Vector2.right;
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-    }
+        {
+            _inputDirection = Vector2.up;
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _direction != Vector2.up)
+        {
+            _inputDirection = Vector2.down;
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _direction != Vector2.right)
+        {
+            _inputDirection = Vector2.left;
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _direction != Vector2.left)
+        {
+            _inputDirection = Vector2.right;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+
+
+
+        // kecepatan snake:
+        // ========== Timer Gerak ==========
+        moveTimer += Time.deltaTime;
+        if (moveTimer >= moveDelay)
+        {
+            Move();
+            moveTimer = 0f;
+        }
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
-        // Terapkan arah input ke arah utama hanya di FixedUpdate (agar sinkron)
-        _direction = _inputDirection; // Tambahan ============
+        _direction = _inputDirection;
 
         for (int i = _segments.Count - 1; i > 0; i--)
         {
@@ -109,6 +128,23 @@ public class Snake : MonoBehaviour
             0.0f
         );
     }
+
+    // private void FixedUpdate()
+    // {
+    //     // Terapkan arah input ke arah utama hanya di FixedUpdate (agar sinkron)
+    //     _direction = _inputDirection; // Tambahan ============
+
+    //     for (int i = _segments.Count - 1; i > 0; i--)
+    //     {
+    //         _segments[i].position = _segments[i - 1].position;
+    //     }
+
+    //     transform.position = new Vector3(
+    //         Mathf.Round(transform.position.x) + _direction.x,
+    //         Mathf.Round(transform.position.y) + _direction.y,
+    //         0.0f
+    //     );
+    // }
 
     public void Grow()
     {
@@ -189,6 +225,9 @@ public class Snake : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, -90);
         }
 
+        // Reset kecepatan ke default
+        moveDelay = 0.05f;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -196,6 +235,10 @@ public class Snake : MonoBehaviour
         if (other.CompareTag("Food"))
         {
             Grow();
+
+            // Tambah kecepatan (kurangi delay), tapi tidak lebih cepat dari minDelay
+            moveDelay = Mathf.Max(minDelay, moveDelay - speedIncrease);
+
             if (scoreManager != null)
             {
                 scoreManager.AddScore(1);
@@ -208,6 +251,11 @@ public class Snake : MonoBehaviour
         }
         else if (other.CompareTag("Obstacle"))
         {
+            if (hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound);
+        }
+        
             ResetState();
             food.SendMessage("RandomizePosition");
             if (scoreManager != null)
@@ -215,10 +263,7 @@ public class Snake : MonoBehaviour
                 scoreManager.ResetScore();
             }
             
-            if (hitSound != null)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+            
         }
     }
 
