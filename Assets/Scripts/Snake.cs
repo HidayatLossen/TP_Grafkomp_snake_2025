@@ -29,8 +29,10 @@ public class Snake : MonoBehaviour
 
 
     private float moveTimer = 0f;
-    private float moveDelay = 0.05f; // Awal = 0.07 detik
-    private float minDelay = 0.01f;  // Batas bawah (maksimum kecepatan)
+    public float moveDelay = 0.05f; // Awal = 0.07 detik
+    // private float minDelay = 0.03f;  // Batas bawah (maksimum kecepatan)
+    [HideInInspector] public float minDelay = 0.03f;
+
     private float speedIncrease = 0.002f; // Setiap kali makan, delay dikurangi 0.002
 
 
@@ -255,7 +257,7 @@ public class Snake : MonoBehaviour
         {
             audioSource.PlayOneShot(hitSound);
         }
-        
+
             ResetState();
             food.SendMessage("RandomizePosition");
             if (scoreManager != null)
