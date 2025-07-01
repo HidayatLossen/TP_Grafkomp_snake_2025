@@ -7,11 +7,10 @@
 [Ll]ogs/
 [Uu]serSettings/
 MemoryCaptures/
-
-# Ignore crash reports
 sysinfo.txt
 
-# Ignore auto-generated VS/JetBrains files
+# ========== VISUAL STUDIO / VS CODE ==========
+.vscode/
 *.csproj
 *.unityproj
 *.sln
@@ -23,24 +22,29 @@ sysinfo.txt
 *.booproj
 *.svd
 
-# Ignore VSCode folder
-.vscode/
-
-# Rider
+# ========== JETBRAINS RIDER ==========
 .idea/
 *.sln.iml
 
-# OS-specific files
+# ========== OS-SPECIFIC FILES ==========
 .DS_Store
 Thumbs.db
 
-# Unity Collaborate and plastic SCM
+# ========== UNITY COLLAB / PLASTIC SCM ==========
 .plastic/
 .collab/
 
-# Builds
+# ========== BUILD ARTIFACTS ==========
 *.apk
 *.aab
 *.exe
 *.app
 *.ipa
+
+# ========== OPTIONAL ==========
+# Uncomment the next line if you store large external assets elsewhere
+# ExternalAssets/
+
+# ========== KEEP IMG FOLDER ==========
+# Do NOT ignore image files inside Assets/img/
+# Make sure you do NOT have *.png or *.jpg globally ignored

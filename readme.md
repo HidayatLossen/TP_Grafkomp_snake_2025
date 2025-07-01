@@ -1,7 +1,8 @@
 # 🐍 Snake Game – Tugas Proyek Grafika Komputer 2025
 ![Version](https://img.shields.io/badge/version-v1.4.0-blue)
 
-![Gameplay Screenshot](img/Snake_game.png)
+![Gameplay Screenshot](img/img2.jpg)
+![Gameplay Screenshot](img/img.jpg)
 
 ## 🧾 Informasi Umum
 - **Nama:** Hidayat - 116
@@ -17,7 +18,8 @@ Proyek ini merupakan pembuatan game **Snake** klasik sebagai bagian dari tugas m
 
 ## 🎮 Fitur Utama
 - Kontrol ular dengan tombol `W`, `A`, `S`, `D` atau `tombol panah`.
-- Setiap kali ular memakan makanan, tubuhnya bertambah panjang.
+- `ESC` untuk untuk Pause
+- Setiap kali ular memakan makanan, tubuhnya bertambah panjang dan kecepatannya akan bertambah.
 - Makanan muncul secara acak dan **tidak pernah muncul di atas tubuh ular**.
 - Menggunakan **object pooling** untuk segmen tubuh ular agar efisien memori.
 - Permainan akan di-reset jika ular menabrak tubuhnya sendiri atau penghalang.
@@ -41,14 +43,19 @@ Struktur berikut adalah isi folder proyek Unity yang bisa kalian **copy langsung
 Tp_Grafika_Snake_2025/
 ├── Assets/
 │   ├── Audio/              # (Opsional) Efek suara dan musik
-│   ├── Resources/          # (Opsional) Asset untuk Resources.Load()
-│   ├── Scenes/             # Scene utama permainan
-│   ├── Scripts/            # Script utama: Snake.cs, Food.cs, dll.
-│   └── Sprites/            # Sprite ular, makanan, background, dll.
-├── img/                    # (Opsional) Gambar untuk dokumentasi README.md
-├── Packages/               # Informasi dependency Unity (wajib disertakan)
-├── ProjectSettings/        # Pengaturan proyek Unity
-└── README.md
+│   ├── Font/               # (Opsional) Font khusus untuk UI atau teks
+│   ├── img/                # Gambar dokumentasi untuk README (img.png, img2.png, dll)
+│   ├── Resources/          # Asset untuk Resources.Load()
+│   ├── Scenes/             # Scene utama permainan (MainScene.unity, dsb)
+│   ├── Scripts/            # Script utama: Snake.cs, Food.cs, GameManager.cs, dll.
+│   ├── Sprites/            # Sprite ular, makanan, background, dll.
+│   └── TextMesh Pro/       # File terkait TMP jika kamu pakai TMP UI
+├── Packages/               # Dependency Unity (manifest.json, dsb)
+├── ProjectSettings/        # Konfigurasi proyek Unity (Input, Tag, Build Settings, dll)
+├── .gitignore              # File pengecualian Git, sudah disesuaikan
+├── README.md               # Dokumentasi proyek, bisa menyisipkan gambar dari Assets/img/
+├── Tp_Grafika_Snake_2025.sln   # Solution file untuk VSCode atau Rider
+└── game_snake.sln              # (Opsional) File solusi tambahan, jika ada
 ```
 
 ## 🎯 Tujuan Proyek
