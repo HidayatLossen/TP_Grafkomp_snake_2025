@@ -57,6 +57,43 @@ Tp_Grafika_Snake_2025/
 ├── Tp_Grafika_Snake_2025.sln   # Solution file untuk VSCode atau Rider
 └── game_snake.sln              # (Opsional) File solusi tambahan, jika ada
 ```
+---
+
+## 🚀 Panduan Menjalankan Proyek Unity
+
+Agar game dapat langsung dimainkan tanpa masalah tampilan kosong (layar biru), ikuti panduan berikut:
+
+### 📌 Langkah-langkah Menyalin Proyek
+
+1. **Copy seluruh folder dan file** dari repositori ini, yaitu:
+
+   * `Assets/`
+   * `Packages/`
+   * `ProjectSettings/`
+2. **Paste-kan ke dalam folder project Unity milikmu sendiri** (project kosong yang sebelumnya sudah dibuat dengan versi Unity yang sesuai).
+3. Jika muncul pop-up seperti **“Replace existing files?”**, klik **“Yes to All”** atau **“Replace All”**.
+
+### 🧭 Cara Membuka Scene Game
+
+Setelah proses penyalinan selesai dan project dibuka di Unity:
+
+1. Kamu mungkin akan melihat tampilan biru kosong. Ini **normal**, karena Unity belum membuka scene utama.
+2. Untuk membuka scene game:
+
+   * Masuk ke **panel Project** (biasanya di bagian bawah).
+   * Buka folder:
+
+     ```
+     Assets > Scenes > Snake (Klik Open di Pojok Kanan Atas Pada Tab Inspektor)
+     ```
+3. Alternatif lain: Pada Project klik tab `Scene` → pilih `Snake > Open` di Pojok Kanan Atas.
+4. Setelah scene terbuka, tekan tombol ▶️ **Play** untuk mulai memainkan game.
+
+### ⚠️ Catatan Penting
+
+* **Jangan hanya meng-copy folder `Assets/` saja** — kamu harus menyertakan `Packages/` dan `ProjectSettings/` agar konfigurasi input, tag, dan build tidak hilang.
+
+---
 
 ## 🎯 Tujuan Proyek
 Game ini dibuat untuk menerapkan berbagai konsep grafika komputer, seperti:
@@ -98,39 +135,3 @@ Penulis (**Hidayat**) melakukan modifikasi dan pengembangan lanjutan terhadap re
 
 
 Berikut bagian **panduan penyalinan dan pembukaan scene** yang sudah **disusun agar langsung cocok ditempel di README** kamu di bagian **setelah "Struktur Folder Penting"** dan **sebelum "Tujuan Proyek"**:
-
----
-
-## 🚀 Panduan Menjalankan Proyek Unity
-
-Agar game dapat langsung dimainkan tanpa masalah tampilan kosong (layar biru), ikuti panduan berikut:
-
-### 📌 Langkah-langkah Menyalin Proyek
-
-1. **Copy seluruh folder dan file** dari repositori ini, yaitu:
-
-   * `Assets/`
-   * `Packages/`
-   * `ProjectSettings/`
-2. **Paste-kan ke dalam folder project Unity milikmu sendiri** (project kosong yang sebelumnya sudah dibuat dengan versi Unity yang sesuai).
-3. Jika muncul pop-up seperti **“Replace existing files?”**, klik **“Yes to All”** atau **“Replace All”**.
-
-### 🧭 Cara Membuka Scene Game
-
-Setelah proses penyalinan selesai dan project dibuka di Unity:
-
-1. Kamu mungkin akan melihat tampilan biru kosong. Ini **normal**, karena Unity belum membuka scene utama.
-2. Untuk membuka scene game:
-
-   * Masuk ke **panel Project** (biasanya di bagian bawah).
-   * Buka folder:
-
-     ```
-     Assets > Scenes > Snake (Klik Open di Pojok Kanan Atas Pada Tab Inspektor)
-     ```
-3. Alternatif lain: Pada Project klik tab `Scene` → pilih `Snake > Open` di Pojok Kanan Atas.
-4. Setelah scene terbuka, tekan tombol ▶️ **Play** untuk mulai memainkan game.
-
-### ⚠️ Catatan Penting
-
-* **Jangan hanya meng-copy folder `Assets/` saja** — kamu harus menyertakan `Packages/` dan `ProjectSettings/` agar konfigurasi input, tag, dan build tidak hilang.
