@@ -128,7 +128,8 @@ Setelah proses penyalinan selesai dan project dibuka di Unity:
      ```
      Assets > Scenes > Snake (Klik Open di Pojok Kanan Atas Pada Tab Inspektor)
      ```
-3. Setelah scene terbuka, tekan tombol ▶️ **Play** untuk mulai memainkan game.
+3. Alternatif lain: Pada Project klik tab `Scene` → pilih `Snake > Open` di Pojok Kanan Atas.
+4. Setelah scene terbuka, tekan tombol ▶️ **Play** untuk mulai memainkan game.
 
 ### ⚠️ Catatan Penting
 
